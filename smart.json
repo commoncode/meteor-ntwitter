@@ -1,0 +1,10 @@
+{
+  "name": "ntwitter",
+  "description": "ntwitter for meteor",
+  "homepage": "https://github.com/commoncode/meteor-ntwitter",
+  "author": "Daryl Antohy (http://commoncode.com.au)",
+  "version": "0.0.1",
+  "git": "https://github.com/commoncode/meteor-ntwitter.git",
+  "packages": {
+  }
+}

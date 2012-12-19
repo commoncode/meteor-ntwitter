@@ -1,0 +1,1 @@
+var ntwitter = __.meteor_bootstrap__.require('/usr/local/lib/node_modules/ntwitter')
