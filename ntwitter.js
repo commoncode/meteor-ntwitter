@@ -1,16 +1,18 @@
 Meteor.nTwitter = __meteor_bootstrap__.require('ntwitter')
 
-Meteor.nTwitter.prototype.streamTweets = function(keywords, product_slug) {
+Meteor.nTwitter.prototype.streamTweets = function(keywords, extra_data) {
     console.log('... ... streamTweets')
     this.stream(
         'statuses/filter',
         { track: keywords },
         function(stream) {
             stream.on('data', function(tweet) {
-            console.log(tweet.text);
+              console.log(tweet.text);
               Fiber(function() {
-                  tweet.product_slug = product_slug
-                  id = Tweets.insert(tweet)
+                // Store some extra data on this tweet
+                _.extend(tweet, extra_data)
+                // Insert the Tweet into the Collection
+                id = Tweets.insert(tweet)
               }).run();
             });
             stream.on('error', function(error, code) {
