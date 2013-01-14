@@ -35,7 +35,8 @@ Meteor.nTwitter.prototype.streamTweets = function(keywords, collection_str, opti
 Meteor.nTwitter.prototype.destroyTweets = function() {
     console.log('... ... destroyTweets')
     var _this = this
-    console.log('... ... ... attempting to destroy the current stream: ' + _this.current_stream.destroy)
+    console.log('... ... ... attempting to destroy the current stream: ' + _this.current_stream)
+    _this.current_stream.destroy()
 }
 
 Meteor.nTwitter.prototype.searchTweets = function(query, collection_str) {
